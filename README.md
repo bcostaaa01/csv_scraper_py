@@ -7,7 +7,7 @@ This Python script demonstrates how to scrape data from a CSV file using the bui
 1. Make sure you have Python installed on your computer.
 2. Download the `csv_scraper.py` file and place it in the same directory as your CSV data and newFile.csv files are located.
 3. In a terminal or command prompt, navigate to the directory where the `csv_scraper.py` file is located.
-4. Run the following command: `python csv_scraper.py your_file_name.csv`, replacing `your_file_name.csv` with the name of your CSV file.
+4. Run the following command: `python csv_scraper.py --input=your_file_name.csv`, replacing `your_file_name.csv` with the name of your CSV file.
 
 To extract the values in the third column (indexed as 2) of each row and write them to a new CSV file, you can modify the script as follows:
 
