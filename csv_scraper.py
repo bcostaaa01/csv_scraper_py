@@ -1,7 +1,8 @@
 import csv
+import argparse
 
-def main(params):
-    input_filename, output_filename = params["input"], params["output"]
+def main(args):
+    input_filename, output_filename = args.input, args.output
 
     # open the CSV file
     with open(input_filename) as input_file:
@@ -17,8 +18,16 @@ def main(params):
 
                 csv_writer.writerow([value])
 
-params = {
-    "input": "people-100.csv",
-    "output": "newFile.csv",
-}
-main(params)
+# For docs see: 
+# https://docs.python.org/3/library/argparse.html
+parser = argparse.ArgumentParser(
+    prog = "csv_scraper.py",
+    description = "parse an input CSV file, process and output to a separate file"
+)
+
+# Both arguments are optional and non-positional
+parser.add_argument('--input', required=False, default="people-100.csv")
+parser.add_argument('--output', required=False, default="newFile.csv")
+
+args = parser.parse_args()
+main(args)
